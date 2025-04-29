@@ -13,9 +13,9 @@
 #include <sys/types.h>
 #include <net/if.h>
 #include <linux/sockios.h>
-#include <libnl3/netlink/attr.h>
-#include <libnl3/netlink/msg.h>
-#include <libnl3/netlink/netlink.h>
+#include <netlink/attr.h>
+#include <netlink/msg.h>
+#include <netlink/netlink.h>
 
 #if defined(CONFIG_HAS_NFTABLES_LIB_API_0) || defined(CONFIG_HAS_NFTABLES_LIB_API_1)
 #include <nftables/libnftables.h>

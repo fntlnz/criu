@@ -10,7 +10,7 @@ lib/c/Makefile: ;
 lib/c/%: .FORCE
 	$(Q) $(MAKE) $(build)=lib/c $@
 
-cflags-so		+= $(CFLAGS) -rdynamic -Wl,-soname,$(CRIU_SO).$(CRIU_SO_VERSION_MAJOR)
+cflags-so		+= $(CFLAGS) -Wl,-soname,$(CRIU_SO).$(CRIU_SO_VERSION_MAJOR)
 ldflags-so		+= -lprotobuf-c
 
 lib/c/$(CRIU_SO): lib/c/built-in.o

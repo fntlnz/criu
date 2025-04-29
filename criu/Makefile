@@ -1,6 +1,5 @@
 # here is a workaround for a bug in libnl-3:
 # 6a8d90f5fec4 "attr: Allow attribute type 0"
-WRAPFLAGS		+= -Wl,--wrap=nla_parse,--wrap=nlmsg_parse
 
 ARCH_DIR		:= criu/arch/$(ARCH)
 PIE_DIR			:= criu/pie
@@ -85,7 +84,7 @@ $(obj)/%: pie
 
 $(obj)/criu: $(PROGRAM-BUILTINS)
 	$(call msg-link, $@)
-	$(Q) $(CC) $(CFLAGS) $^ $(LDFLAGS) $(LIBS) $(WRAPFLAGS) $(GMONLDOPT) -rdynamic -o $@
+	$(Q) $(CC) $(CFLAGS) $^ $(LDFLAGS) $(LIBS) $(WRAPFLAGS) $(GMONLDOPT) -o $@
 
 UNIT-BUILTINS		+= $(obj)/util.o
 UNIT-BUILTINS		+= $(obj)/config.o
@@ -102,7 +101,7 @@ $(obj)/unittest/built-in.o: .FORCE
 
 $(obj)/unittest/unittest: $(UNIT-BUILTINS)
 	$(call msg-link, $@)
-	$(Q) $(CC) $(CFLAGS) $^ $(LDFLAGS) $(LIBS) $(WRAPFLAGS) -rdynamic -o $@
+	$(Q) $(CC) $(CFLAGS) $^ $(LDFLAGS) $(LIBS) $(WRAPFLAGS) -o $@
 
 unittest: $(obj)/unittest/unittest
 	$(Q) $(obj)/unittest/$@
