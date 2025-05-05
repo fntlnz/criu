@@ -2,8 +2,8 @@
 #include <sys/socket.h>
 #include <linux/netlink.h>
 #include <linux/rtnetlink.h>
-#include <libnl3/netlink/attr.h>
-#include <libnl3/netlink/msg.h>
+#include <netlink/attr.h>
+#include <netlink/msg.h>
 #include <string.h>
 #include <unistd.h>
 

@@ -10,12 +10,12 @@ lib/c/Makefile: ;
 lib/c/%: .FORCE
 	$(Q) $(MAKE) $(build)=lib/c $@
 
-cflags-so		+= $(CFLAGS) -rdynamic -Wl,-soname,$(CRIU_SO).$(CRIU_SO_VERSION_MAJOR)
+cflags-so		+= $(CFLAGS) -Wl,-soname,$(CRIU_SO).$(CRIU_SO_VERSION_MAJOR)
 ldflags-so		+= -lprotobuf-c
 
 lib/c/$(CRIU_SO): lib/c/built-in.o
 	$(call msg-link, $@)
-	$(Q) $(CC) -shared $(cflags-so) -o $@ $^ $(ldflags-so) $(LDFLAGS)
+	$(Q) $(CC) $(cflags-so) -o $@ $^ $(ldflags-so) $(LDFLAGS)
 lib/c/$(CRIU_A): lib/c/built-in.o
 	$(call msg-link, $@)
 	$(Q) $(AR) rcs $@ $^

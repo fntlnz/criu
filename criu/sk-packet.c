@@ -4,7 +4,7 @@
 #include <sys/ioctl.h>
 #include <linux/netlink.h>
 #include <linux/rtnetlink.h>
-#include <libnl3/netlink/msg.h>
+#include <netlink/msg.h>
 #include <unistd.h>
 #include <string.h>
 #include "imgset.h"

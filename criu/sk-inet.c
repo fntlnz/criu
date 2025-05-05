@@ -3,7 +3,7 @@
 #include <linux/netlink.h>
 #include <linux/rtnetlink.h>
 #include <netinet/udp.h>
-#include <libnl3/netlink/msg.h>
+#include <netlink/msg.h>
 #include <net/if.h>
 #include <sys/mman.h>
 #include <unistd.h>

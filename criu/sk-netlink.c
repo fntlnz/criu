@@ -1,7 +1,7 @@
 #include <unistd.h>
 #include <linux/netlink.h>
 #include <linux/rtnetlink.h>
-#include <libnl3/netlink/msg.h>
+#include <netlink/msg.h>
 
 #include "imgset.h"
 #include "files.h"
